@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Github } from "lucide-react";
+import { Github, Menu, X } from "lucide-react";
 
 // Import images
 import mainLight from "../../images/main_light.png";
@@ -18,8 +18,17 @@ import swiftBirds from "../../images/swift-birds.png";
 import prototypeScreen from "../../images/prototype.png";
 import appLogo from "../../images/app-logo.png";
 
+const navLabels: Record<string, string> = {
+  overview: "Overview",
+  build: "The Build",
+  decisions: "Decisions",
+  shipped: "What Shipped",
+  next: "What's Next",
+};
+
 export default function App() {
   const [activeSection, setActiveSection] = useState("overview");
+  const [menuOpen, setMenuOpen] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
@@ -46,6 +55,7 @@ export default function App() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
       setActiveSection(id);
+      setMenuOpen(false);
     }
   };
 
@@ -60,7 +70,6 @@ export default function App() {
               alt="Supscription"
               style={{ height: "2rem", width: "auto" }}
             />
-            {/* Change 1 — header title with Case Study label */}
             <h1 className="text-xl font-semibold">
               Supscription
               <span className="text-white/40 font-light text-sm ml-2">
@@ -68,51 +77,20 @@ export default function App() {
               </span>
             </h1>
           </div>
-          <nav className="flex items-center gap-8">
-            <button
-              onClick={() => scrollToSection("overview")}
-              className={`text-sm hover:text-[#FF2D6B] transition-colors ${
-                activeSection === "overview"
-                  ? "text-[#FF2D6B]"
-                  : "text-white/70"
-              }`}
-            >
-              Overview
-            </button>
-            <button
-              onClick={() => scrollToSection("build")}
-              className={`text-sm hover:text-[#FF2D6B] transition-colors ${
-                activeSection === "build" ? "text-[#FF2D6B]" : "text-white/70"
-              }`}
-            >
-              The Build
-            </button>
-            <button
-              onClick={() => scrollToSection("decisions")}
-              className={`text-sm hover:text-[#FF2D6B] transition-colors ${
-                activeSection === "decisions"
-                  ? "text-[#FF2D6B]"
-                  : "text-white/70"
-              }`}
-            >
-              Decisions
-            </button>
-            <button
-              onClick={() => scrollToSection("shipped")}
-              className={`text-sm hover:text-[#FF2D6B] transition-colors ${
-                activeSection === "shipped" ? "text-[#FF2D6B]" : "text-white/70"
-              }`}
-            >
-              What Shipped
-            </button>
-            <button
-              onClick={() => scrollToSection("next")}
-              className={`text-sm hover:text-[#FF2D6B] transition-colors ${
-                activeSection === "next" ? "text-[#FF2D6B]" : "text-white/70"
-              }`}
-            >
-              What's Next
-            </button>
+
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-8">
+            {Object.keys(navLabels).map((id) => (
+              <button
+                key={id}
+                onClick={() => scrollToSection(id)}
+                className={`text-sm hover:text-[#FF2D6B] transition-colors ${
+                  activeSection === id ? "text-[#FF2D6B]" : "text-white/70"
+                }`}
+              >
+                {navLabels[id]}
+              </button>
+            ))}
             <a
               href="https://github.com/imrichie/supscription"
               target="_blank"
@@ -123,10 +101,46 @@ export default function App() {
               <span className="text-sm">GitHub</span>
             </a>
           </nav>
+
+          {/* Mobile nav controls */}
+          <div className="flex md:hidden items-center gap-3">
+            <a
+              href="https://github.com/imrichie/supscription"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-3 py-1.5 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
+            >
+              <Github size={14} />
+              <span className="text-sm">GitHub</span>
+            </a>
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="p-2 text-white/70 hover:text-white transition-colors"
+            >
+              {menuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
+
+        {/* Mobile dropdown */}
+        {menuOpen && (
+          <div className="md:hidden border-t border-white/10 bg-[#0d1117]/95 px-8 py-4 flex flex-col gap-4">
+            {Object.keys(navLabels).map((id) => (
+              <button
+                key={id}
+                onClick={() => scrollToSection(id)}
+                className={`text-sm text-left hover:text-[#FF2D6B] transition-colors ${
+                  activeSection === id ? "text-[#FF2D6B]" : "text-white/70"
+                }`}
+              >
+                {navLabels[id]}
+              </button>
+            ))}
+          </div>
+        )}
       </header>
 
-      {/* Hero Section — Change 2: pb-8 */}
+      {/* Hero Section */}
       <section className="relative flex items-center justify-center px-8 pt-16 pb-8 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#1A0050] rounded-full blur-[120px]"></div>
@@ -144,7 +158,7 @@ export default function App() {
             bank linking. No accounts. Just your subscriptions, on your Mac.
           </p>
 
-          <div className="flex items-center justify-center gap-4 mb-16">
+          <div className="flex items-center justify-center gap-4 mb-4">
             <span className="px-4 py-2 bg-white/10 rounded-full text-sm border border-white/20">
               Swift
             </span>
@@ -153,12 +167,20 @@ export default function App() {
             </span>
           </div>
 
+          {/* App Store CTA */}
+          <div className="flex justify-center mb-16">
+            <div className="flex items-center gap-2 px-5 py-2.5 border border-white/20 rounded-full text-sm text-white/60 bg-white/5">
+              <span className="text-base"></span>
+              <span>Coming Soon to the Mac App Store</span>
+            </div>
+          </div>
+
           <div className="relative perspective-[2000px]">
             <div className="transform rotate-x-[2deg] rotate-y-[1deg] transition-transform duration-300 hover:rotate-x-[4deg] hover:rotate-y-[2deg]">
               <img
                 src={mainLight}
                 alt="Supscription App Main View"
-                className="w-full max-w-5xl mx-auto rounded-xl shadow-2xl shadow-black/50"
+                className="screenshot-frame w-full max-w-5xl mx-auto"
                 loading="eager"
               />
             </div>
@@ -166,8 +188,8 @@ export default function App() {
         </div>
       </section>
 
-      {/* Overview Section — Change 2: pt-8 */}
-      <section id="overview" className="pt-8 pb-16 px-8">
+      {/* Overview Section */}
+      <section id="overview" className="py-[120px] px-8">
         <div className="max-w-[1200px] mx-auto">
           {/* Pull Quote */}
           <div className="py-12 px-8 text-center border-t border-b border-white/10 mb-10 fade-in">
@@ -182,31 +204,30 @@ export default function App() {
             </p>
           </div>
 
-          {/* Change 3 — responsive asymmetric bento grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch fade-in">
             <div className="md:col-span-1 lg:col-span-2 overflow-hidden rounded-xl border border-white/10">
               <img
                 src={welcomeLight}
                 alt="Supscription Welcome"
-                className="w-full h-full object-cover rounded-xl"
+                className="screenshot-frame w-full h-full object-cover"
                 loading="lazy"
               />
             </div>
             <div className="col-span-1 bg-gradient-to-br from-[#1A0050]/20 to-[#FF2D6B]/10 border border-white/10 rounded-2xl p-8 flex flex-col justify-center space-y-6">
-              <p className="text-lg leading-relaxed text-white/90">
+              <p className="text-lg leading-relaxed text-white/90 max-w-2xl">
                 The subscription tracking category had a clear execution gap.
                 Every option was buried inside a finance suite or wanted bank
                 credentials before showing anything useful. Nobody was building
                 the focused version — the one that just does the thing, on the
                 platform, the way the platform expects.
               </p>
-              <p className="text-lg leading-relaxed text-white/90">
+              <p className="text-lg leading-relaxed text-white/90 max-w-2xl">
                 I'd felt this before with flight logbooks. I took private flying
                 lessons and couldn't find a standalone logbook app that felt
                 native. ForeFlight existed but it was a full suite. I just
                 wanted the logbook.
               </p>
-              <p className="text-lg leading-relaxed text-white/90">
+              <p className="text-lg leading-relaxed text-white/90 max-w-2xl">
                 That pattern — a focused version of something that only exists
                 inside something bigger — was the real reason to build
                 Supscription.
@@ -217,7 +238,7 @@ export default function App() {
       </section>
 
       {/* Foundation Section */}
-      <section className="py-8 px-8 bg-gradient-to-b from-transparent via-[#1A0050]/10 to-transparent">
+      <section className="py-[120px] px-8 bg-gradient-to-b from-transparent via-[#1A0050]/10 to-transparent">
         <div className="max-w-[1200px] mx-auto fade-in">
           <h3 className="text-5xl font-bold mb-8 text-center">
             Built on Apple's frameworks. Everything.
@@ -230,7 +251,6 @@ export default function App() {
             the app behaves like a platform app because it actually is one.
           </p>
 
-          {/* Change 3 — responsive grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors">
               <img
@@ -270,18 +290,17 @@ export default function App() {
       </section>
 
       {/* The Build Section */}
-      <section id="build" className="py-8 px-8">
+      <section id="build" className="py-[120px] px-8">
         <div className="max-w-[1200px] mx-auto">
           <h3 className="text-6xl font-bold mb-10 fade-in">The Build</h3>
 
-          {/* Change 3 — responsive grid-cols-5 */}
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 items-start fade-in">
             {/* Large Image */}
             <div className="lg:col-span-3 lg:sticky lg:top-24">
               <img
                 src={mainLight}
                 alt="Supscription Main View"
-                className="w-full rounded-xl shadow-2xl border border-white/10"
+                className="screenshot-frame w-full"
                 loading="lazy"
               />
             </div>
@@ -326,13 +345,13 @@ export default function App() {
         </div>
       </section>
 
-      {/* Decisions Section - Bento Grid */}
+      {/* Decisions Section */}
       <section
         id="decisions"
-        className="py-8 px-8 bg-gradient-to-b from-transparent via-[#FF2D6B]/5 to-transparent"
+        className="py-[120px] px-8 bg-gradient-to-b from-transparent via-[#FF2D6B]/5 to-transparent"
       >
         <div className="max-w-[1400px] mx-auto">
-          <h3 className="text-6xl font-bold mb-10 text-center fade-in">
+          <h3 className="text-6xl font-bold mb-10 fade-in">
             Decisions Worth Talking About
           </h3>
 
@@ -342,13 +361,13 @@ export default function App() {
               <img
                 src={dashboardLight}
                 alt="Dashboard"
-                className="w-full rounded-lg mb-6 border border-white/10"
+                className="screenshot-frame w-full mb-6"
                 loading="lazy"
               />
               <h4 className="text-2xl font-semibold mb-4">
                 The Dashboard wasn't in scope
               </h4>
-              <p className="text-white/70 leading-relaxed">
+              <p className="text-white/70 leading-relaxed max-w-2xl">
                 v1.0 was purely the core tracking loop. At some point the
                 question shifted from "does this work" to "does this have enough
                 value to ship publicly". The Dashboard earned its place by
@@ -383,14 +402,14 @@ export default function App() {
       </section>
 
       {/* Process Section */}
-      <section className="py-8 px-8">
+      <section className="py-[120px] px-8">
         <div className="max-w-[1200px] mx-auto">
-          <h3 className="text-6xl font-bold mb-10 text-center fade-in">
+          <h3 className="text-6xl font-bold mb-10 fade-in">
             How It Came Together
           </h3>
 
           <div className="space-y-16 fade-in">
-            {/* Stage 1 — Change 3: responsive */}
+            {/* Stage 1 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
               <div>
                 <div className="inline-block px-4 py-2 bg-[#FF2D6B]/20 text-[#FF2D6B] rounded-full text-sm mb-6">
@@ -399,7 +418,7 @@ export default function App() {
                 <h4 className="text-3xl font-semibold mb-4">
                   Managed in Kanban
                 </h4>
-                <p className="text-white/70 leading-relaxed text-lg">
+                <p className="text-white/70 leading-relaxed text-lg max-w-2xl">
                   Every feature, bug, and polish item tracked with clarity.
                   Migrated to GitHub Issues and Projects for v2.0.
                 </p>
@@ -420,7 +439,7 @@ export default function App() {
               </div>
             </div>
 
-            {/* Stage 2 — Change 3: responsive */}
+            {/* Stage 2 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
               <div>
                 <div className="inline-block px-4 py-2 bg-[#FF2D6B]/20 text-[#FF2D6B] rounded-full text-sm mb-6">
@@ -429,7 +448,7 @@ export default function App() {
                 <h4 className="text-3xl font-semibold mb-4">
                   Feature prioritization
                 </h4>
-                <p className="text-white/70 leading-relaxed text-lg">
+                <p className="text-white/70 leading-relaxed text-lg max-w-2xl">
                   Used an Eisenhower Matrix to scope v1.0 and prevent
                   overbuilding.
                 </p>
@@ -450,44 +469,47 @@ export default function App() {
       {/* What Shipped Section */}
       <section
         id="shipped"
-        className="py-8 px-8 bg-gradient-to-b from-transparent via-[#1A0050]/10 to-transparent"
+        className="py-[120px] px-8 bg-gradient-to-b from-transparent via-[#1A0050]/10 to-transparent"
       >
         <div className="max-w-[1400px] mx-auto">
-          <h3 className="text-6xl font-bold mb-10 text-center fade-in">
-            What Shipped
-          </h3>
+          <h3 className="text-6xl font-bold mb-10 fade-in">What Shipped</h3>
 
           <div className="mb-10 fade-in">
             <img
               src={dashboardLight}
               alt="Main View"
-              className="w-full rounded-xl border border-white/10 shadow-2xl mb-6"
+              className="screenshot-frame w-full mb-6"
               loading="lazy"
             />
-            {/* Change 3 — responsive thumbnails */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <img
-                src={mainDark}
-                alt="Dashboard"
-                className="w-full rounded-xl border border-white/10 shadow-xl"
-                loading="lazy"
-              />
-              <img
-                src={cancelLight}
-                alt="To Cancel"
-                className="w-full rounded-xl border border-white/10 shadow-xl"
-                loading="lazy"
-              />
-              <img
-                src={addNewLight}
-                alt="Add New"
-                className="w-full rounded-xl border border-white/10 shadow-xl"
-                loading="lazy"
-              />
+            {/* Staggered thumbnail row — flattens on mobile */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
+              <div className="md:-translate-y-4">
+                <img
+                  src={mainDark}
+                  alt="Dashboard Dark"
+                  className="screenshot-frame w-full"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <img
+                  src={cancelLight}
+                  alt="To Cancel"
+                  className="screenshot-frame w-full"
+                  loading="lazy"
+                />
+              </div>
+              <div className="md:translate-y-4">
+                <img
+                  src={addNewLight}
+                  alt="Add New"
+                  className="screenshot-frame w-full"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
 
-          {/* Change 3 — responsive feature grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 fade-in">
             <div className="bg-white/5 border border-white/10 rounded-lg px-6 py-4">
               <span className="text-white/90">
@@ -548,13 +570,13 @@ export default function App() {
       </section>
 
       {/* Dark Mode Section */}
-      <section className="py-8 px-8">
+      <section className="py-[120px] px-8">
         <div className="max-w-[1400px] mx-auto fade-in">
           <div className="relative overflow-hidden rounded-2xl">
             <img
               src={mainDark}
               alt="Dark Mode"
-              className="w-full"
+              className="screenshot-frame w-full"
               loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0d1117] via-transparent to-transparent flex items-end justify-center pb-16">
@@ -569,7 +591,11 @@ export default function App() {
       {/* What's Next Section */}
       <section
         id="next"
-        className="py-8 px-8 bg-gradient-to-b from-transparent via-[#FF2D6B]/10 to-[#1A0050]/10"
+        className="py-[120px] px-8"
+        style={{
+          background:
+            "radial-gradient(ellipse at center top, rgba(26,0,80,0.6) 0%, rgba(13,17,23,0.95) 70%)",
+        }}
       >
         <div className="max-w-[1200px] mx-auto fade-in">
           <h3 className="text-6xl font-bold mb-12 text-center">
@@ -588,30 +614,56 @@ export default function App() {
             differently.
           </p>
 
-          {/* Change 3 — responsive grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-[#1A0050]/30 to-[#1A0050]/10 border border-[#1A0050]/50 rounded-2xl p-8">
-              <div className="text-4xl mb-4">🧠</div>
-              <h4 className="text-2xl font-semibold mb-4">Foundation Models</h4>
-              <p className="text-white/70">
+            <div className="bg-gradient-to-br from-[#1A0050]/30 to-[#1A0050]/10 border border-[#1A0050]/50 rounded-2xl p-8 flex flex-col gap-4">
+              <div
+                className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl"
+                style={{ background: "linear-gradient(135deg, #FF2D6B, #1A0050)" }}
+              >
+                🧠
+              </div>
+              <h4 className="text-xl font-semibold">Foundation Models</h4>
+              <p className="text-white/70 flex-1">
                 On-device category suggestions and spending summaries
               </p>
+              <span className="self-start text-xs text-white/30 border border-white/10 rounded-full px-2 py-0.5">
+                Planned
+              </span>
             </div>
-            <div className="bg-gradient-to-br from-[#FF2D6B]/30 to-[#FF2D6B]/10 border border-[#FF2D6B]/50 rounded-2xl p-8">
-              <div className="text-4xl mb-4">📊</div>
-              <h4 className="text-2xl font-semibold mb-4">Core ML</h4>
-              <p className="text-white/70">
+
+            <div className="bg-gradient-to-br from-[#FF2D6B]/30 to-[#FF2D6B]/10 border border-[#FF2D6B]/50 rounded-2xl p-8 flex flex-col gap-4">
+              <div
+                className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl"
+                style={{ background: "linear-gradient(135deg, #1A0050, #FF2D6B)" }}
+              >
+                📊
+              </div>
+              <h4 className="text-xl font-semibold">Core ML</h4>
+              <p className="text-white/70 flex-1">
                 Anomaly detection and spending forecasts
               </p>
+              <span className="self-start text-xs text-white/30 border border-white/10 rounded-full px-2 py-0.5">
+                Roadmap
+              </span>
             </div>
-            <div className="bg-gradient-to-br from-[#1A0050]/30 to-[#1A0050]/10 border border-[#1A0050]/50 rounded-2xl p-8">
-              <div className="text-4xl mb-4">✨</div>
-              <h4 className="text-2xl font-semibold mb-4">
-                Apple Intelligence
-              </h4>
-              <p className="text-white/70">
+
+            <div className="bg-gradient-to-br from-[#1A0050]/30 to-[#1A0050]/10 border border-[#1A0050]/50 rounded-2xl p-8 flex flex-col gap-4">
+              <div
+                className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl"
+                style={{
+                  background:
+                    "linear-gradient(135deg, rgba(255,45,107,0.7), rgba(26,0,80,0.7))",
+                }}
+              >
+                ✨
+              </div>
+              <h4 className="text-xl font-semibold">Apple Intelligence</h4>
+              <p className="text-white/70 flex-1">
                 As those APIs mature and become available
               </p>
+              <span className="self-start text-xs text-white/30 border border-white/10 rounded-full px-2 py-0.5">
+                Roadmap
+              </span>
             </div>
           </div>
         </div>
@@ -624,8 +676,8 @@ export default function App() {
             <div className="font-semibold mb-1">Supscription</div>
             <div className="text-sm text-white/50">Built by Richie Flores</div>
           </div>
-          <div className="text-center">
-            <div className="text-sm text-white/50">
+          <div className="text-center py-2">
+            <div className="text-base text-white/70">
               A one-time purchase. No subscription to track your subscriptions.
             </div>
           </div>
@@ -654,6 +706,13 @@ export default function App() {
 
         .rotate-y-1 {
           transform: rotateY(1deg);
+        }
+
+        .screenshot-frame {
+          border-radius: 12px;
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          box-shadow: 0 0 40px rgba(255, 45, 107, 0.08), 0 32px 64px rgba(0, 0, 0, 0.5);
+          display: block;
         }
 
         .fade-in {
