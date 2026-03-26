@@ -189,61 +189,49 @@ export default function App() {
       </section>
 
       {/* Overview Section */}
-      <section id="overview" className="py-[120px] px-8">
-        <div className="max-w-[1200px] mx-auto">
-          {/* Pull Quote */}
-          <div className="py-12 px-8 text-center border-t border-b border-white/10 mb-10 fade-in">
-            <p className="text-2xl leading-relaxed text-white/90 max-w-4xl mx-auto">
-              "The subscription tracking category had a clear execution gap.
-              Every option was buried inside a finance suite or wanted bank
-              credentials before showing anything useful.{" "}
-              <span className="text-[#FF2D6B]">
-                Nobody was building the focused version.
-              </span>
-              "
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch fade-in">
-            <div className="md:col-span-1 lg:col-span-2 overflow-hidden rounded-xl border border-white/10">
-              <img
-                src={welcomeLight}
-                alt="Supscription Welcome"
-                className="screenshot-frame w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-            <div className="col-span-1 bg-gradient-to-br from-[#1A0050]/20 to-[#FF2D6B]/10 border border-white/10 rounded-2xl p-8 flex flex-col justify-center space-y-6">
-              <p className="text-lg leading-relaxed text-white/90 max-w-2xl">
-                The subscription tracking category had a clear execution gap.
+      <section id="overview" className="py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-2xl mx-auto space-y-8 fade-in">
+            <blockquote className="py-8 border-t border-b border-white/10">
+              <p className="text-2xl leading-relaxed text-white/90">
+                "The subscription tracking category had a clear execution gap.
                 Every option was buried inside a finance suite or wanted bank
-                credentials before showing anything useful. Nobody was building
-                the focused version — the one that just does the thing, on the
-                platform, the way the platform expects.
+                credentials before showing anything useful.{" "}
+                <span className="text-[#FF2D6B]">
+                  Nobody was building the focused version.
+                </span>
+                "
               </p>
-              <p className="text-lg leading-relaxed text-white/90 max-w-2xl">
-                I'd felt this before with flight logbooks. I took private flying
-                lessons and couldn't find a standalone logbook app that felt
-                native. ForeFlight existed but it was a full suite. I just
-                wanted the logbook.
-              </p>
-              <p className="text-lg leading-relaxed text-white/90 max-w-2xl">
-                That pattern — a focused version of something that only exists
-                inside something bigger — was the real reason to build
-                Supscription.
-              </p>
-            </div>
+            </blockquote>
+            <p className="text-lg leading-relaxed text-white/80">
+              The subscription tracking category had a clear execution gap.
+              Every option was buried inside a finance suite or wanted bank
+              credentials before showing anything useful. Nobody was building
+              the focused version — the one that just does the thing, on the
+              platform, the way the platform expects.
+            </p>
+            <p className="text-lg leading-relaxed text-white/80">
+              I'd felt this before with flight logbooks. I took private flying
+              lessons and couldn't find a standalone logbook app that felt
+              native. ForeFlight existed but it was a full suite. I just
+              wanted the logbook.
+            </p>
+            <p className="text-lg leading-relaxed text-white/80">
+              That pattern — a focused version of something that only exists
+              inside something bigger — was the real reason to build
+              Supscription.
+            </p>
           </div>
         </div>
       </section>
 
       {/* Foundation Section */}
-      <section className="py-[120px] px-8 bg-gradient-to-b from-transparent via-[#1A0050]/10 to-transparent">
-        <div className="max-w-[1200px] mx-auto fade-in">
+      <section className="py-24 px-6 bg-gradient-to-b from-transparent via-[#1A0050]/10 to-transparent">
+        <div className="max-w-6xl mx-auto fade-in">
           <h3 className="text-5xl font-bold mb-8 text-center">
             Built on Apple's frameworks. Everything.
           </h3>
-          <p className="text-xl text-white/70 text-center max-w-3xl mx-auto mb-16 leading-relaxed">
+          <p className="text-xl text-white/70 text-center max-w-3xl mx-auto mb-12 leading-relaxed">
             No third-party libraries. SwiftUI, SwiftData, UserNotifications,
             Swift Charts, URLSession — Apple's own tools cover everything this
             app needs. Using the platform's frameworks isn't a philosophy, it's
@@ -251,65 +239,64 @@ export default function App() {
             the app behaves like a platform app because it actually is one.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors">
-              <img
-                src={swiftBirds}
-                alt="Swift Birds"
-                className="w-full h-48 object-cover rounded-lg mb-6"
-                loading="lazy"
-              />
-              <div className="text-sm text-white/70">
-                Swift · SwiftUI · SwiftData
-              </div>
+          <div className="flex flex-wrap justify-center gap-8">
+            <div className="flex items-center gap-3 text-white/70">
+              <span className="text-xl">🐦</span>
+              <span className="text-sm">Swift · SwiftUI · SwiftData</span>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors">
-              <img
-                src={higScreenshot}
-                alt="Apple HIG"
-                className="w-full h-48 object-cover rounded-lg mb-6"
-                loading="lazy"
-              />
-              <div className="text-sm text-white/70">
-                Apple HIG — referenced on every decision
-              </div>
+            <div className="flex items-center gap-3 text-white/70">
+              <span className="text-xl">📊</span>
+              <span className="text-sm">Swift Charts</span>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors">
-              <img
-                src={codeScreenshot}
-                alt="Code Screenshot"
-                className="w-full h-48 object-cover rounded-lg mb-6"
-                loading="lazy"
-              />
-              <div className="text-sm text-white/70">
-                Modular component architecture
-              </div>
+            <div className="flex items-center gap-3 text-white/70">
+              <span className="text-xl">🔔</span>
+              <span className="text-sm">UserNotifications</span>
+            </div>
+            <div className="flex items-center gap-3 text-white/70">
+              <span className="text-xl">🌐</span>
+              <span className="text-sm">URLSession</span>
+            </div>
+            <div className="flex items-center gap-3 text-white/70">
+              <span className="text-xl">📐</span>
+              <span className="text-sm">Apple HIG</span>
+            </div>
+            <div className="flex items-center gap-3 text-white/70">
+              <span className="text-xl">🧩</span>
+              <span className="text-sm">Modular Architecture</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* The Build Section */}
-      <section id="build" className="py-[120px] px-8">
-        <div className="max-w-[1200px] mx-auto">
-          <h3 className="text-6xl font-bold mb-10 fade-in">The Build</h3>
+      <section id="build" className="py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h3 className="text-4xl font-bold text-left mb-4 fade-in">The Build</h3>
 
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 items-start fade-in">
-            {/* Large Image */}
-            <div className="lg:col-span-3 lg:sticky lg:top-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 fade-in">
+            {/* Screenshot left — natural aspect ratio locks the row height */}
+            <div
+              className="rounded-xl overflow-hidden"
+              style={{
+                aspectRatio: "2814 / 1854",
+                boxShadow: "0 0 40px rgba(255,45,107,0.08), 0 32px 64px rgba(0,0,0,0.5)",
+                border: "1px solid rgba(255,255,255,0.08)",
+              }}
+            >
               <img
                 src={mainLight}
                 alt="Supscription Main View"
-                className="screenshot-frame w-full"
+                className="w-full h-full"
                 loading="lazy"
               />
             </div>
 
-            <div className="lg:col-span-2 space-y-8">
-              <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-8">
-                <div className="text-3xl mb-4">🎨</div>
-                <h4 className="text-2xl font-semibold mb-4">Logo Fetching</h4>
-                <p className="text-white/70 leading-relaxed">
+            {/* Cards right — grid-rows-3 divides the image height into 3 equal slots */}
+            <div className="grid grid-rows-3 gap-3">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-4 flex flex-col min-h-0 overflow-hidden">
+                <div className="text-2xl mb-2">🎨</div>
+                <h4 className="text-base font-semibold mb-1">Logo Fetching</h4>
+                <p className="text-white/70 text-sm leading-relaxed">
                   Pulling company logos by domain sounds simple. Edge cases make
                   it a real engineering problem — mismatched names, missing
                   assets, cache invalidation, graceful fallbacks that feel
@@ -317,10 +304,10 @@ export default function App() {
                 </p>
               </div>
 
-              <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-8">
-                <div className="text-3xl mb-4">🔔</div>
-                <h4 className="text-2xl font-semibold mb-4">Notifications</h4>
-                <p className="text-white/70 leading-relaxed">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-4 flex flex-col min-h-0 overflow-hidden">
+                <div className="text-2xl mb-2">🔔</div>
+                <h4 className="text-base font-semibold mb-1">Notifications</h4>
+                <p className="text-white/70 text-sm leading-relaxed">
                   UNUserNotificationCenter on macOS surfaces edge cases iOS
                   developers don't usually hit. Past-due dates, permission
                   states, two distinct notification types with separate
@@ -329,10 +316,10 @@ export default function App() {
                 </p>
               </div>
 
-              <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-8">
-                <div className="text-3xl mb-4">✅</div>
-                <h4 className="text-2xl font-semibold mb-4">Unit Tests</h4>
-                <p className="text-white/70 leading-relaxed">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-4 flex flex-col min-h-0 overflow-hidden">
+                <div className="text-2xl mb-2">✅</div>
+                <h4 className="text-base font-semibold mb-1">Unit Tests</h4>
+                <p className="text-white/70 text-sm leading-relaxed">
                   31 tests covering the SwiftData model layer, billing
                   calculations across all frequency types, and notification
                   scheduling edge cases. Found a real discrepancy during
@@ -348,118 +335,130 @@ export default function App() {
       {/* Decisions Section */}
       <section
         id="decisions"
-        className="py-[120px] px-8 bg-gradient-to-b from-transparent via-[#FF2D6B]/5 to-transparent"
+        className="py-24 px-6 bg-gradient-to-b from-transparent via-[#FF2D6B]/5 to-transparent"
       >
-        <div className="max-w-[1400px] mx-auto">
-          <h3 className="text-6xl font-bold mb-10 fade-in">
+        <div className="max-w-6xl mx-auto">
+          <h3 className="text-4xl font-bold text-left mb-4 fade-in">
             Decisions Worth Talking About
           </h3>
 
-          <div className="grid grid-cols-12 gap-6 fade-in">
-            {/* Large card - Dashboard */}
-            <div className="col-span-12 lg:col-span-8 row-span-2 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-8 hover:border-[#FF2D6B]/50 transition-colors">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 fade-in">
+            {/* Cards left — grid-rows-3 divides the image height into 3 equal slots */}
+            <div className="grid grid-rows-3 gap-3">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-4 flex flex-col min-h-0 overflow-hidden hover:border-[#FF2D6B]/50 transition-colors">
+                <h4 className="text-base font-semibold mb-1">
+                  The Dashboard wasn't in scope
+                </h4>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  v1.0 was purely the core tracking loop. At some point the
+                  question shifted from "does this work" to "does this have
+                  enough value to ship publicly". The Dashboard earned its place
+                  by answering that question.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-[#1A0050]/20 to-[#1A0050]/5 border border-white/10 rounded-2xl p-4 flex flex-col min-h-0 overflow-hidden hover:border-[#1A0050]/50 transition-colors">
+                <div className="text-2xl mb-2">✏️</div>
+                <h4 className="text-base font-semibold mb-1">
+                  Inline editing over a modal
+                </h4>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  Every time I hit Edit and a sheet appeared presenting the same
+                  information as a form, I felt the friction. Why leave the
+                  screen you're already on? The fix was obvious once I named the
+                  problem.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-[#FF2D6B]/20 to-[#FF2D6B]/5 border border-white/10 rounded-2xl p-4 flex flex-col min-h-0 overflow-hidden hover:border-[#FF2D6B]/50 transition-colors">
+                <div className="text-2xl mb-2">💾</div>
+                <h4 className="text-base font-semibold mb-1">Local first</h4>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  SwiftData, nothing leaving the device. iCloud sync is on the
+                  roadmap. But it's not what the first release needed to prove.
+                </p>
+              </div>
+            </div>
+
+            {/* Screenshot right — natural aspect ratio locks the row height */}
+            <div
+              className="rounded-xl overflow-hidden"
+              style={{
+                aspectRatio: "2814 / 1854",
+                boxShadow: "0 0 40px rgba(255,45,107,0.08), 0 32px 64px rgba(0,0,0,0.5)",
+                border: "1px solid rgba(255,255,255,0.08)",
+              }}
+            >
               <img
                 src={dashboardLight}
                 alt="Dashboard"
-                className="screenshot-frame w-full mb-6"
+                className="w-full h-full"
                 loading="lazy"
               />
-              <h4 className="text-2xl font-semibold mb-4">
-                The Dashboard wasn't in scope
-              </h4>
-              <p className="text-white/70 leading-relaxed max-w-2xl">
-                v1.0 was purely the core tracking loop. At some point the
-                question shifted from "does this work" to "does this have enough
-                value to ship publicly". The Dashboard earned its place by
-                answering that question.
-              </p>
-            </div>
-
-            {/* Medium card - Inline editing */}
-            <div className="col-span-12 sm:col-span-6 lg:col-span-4 bg-gradient-to-br from-[#1A0050]/20 to-[#1A0050]/5 border border-white/10 rounded-2xl p-8 hover:border-[#1A0050]/50 transition-colors">
-              <div className="text-3xl mb-4">✏️</div>
-              <h4 className="text-xl font-semibold mb-4">
-                Inline editing over a modal
-              </h4>
-              <p className="text-white/70 leading-relaxed">
-                Every time I hit Edit and a sheet appeared presenting the same
-                information as a form, I felt the friction. Why leave the screen
-                you're already on? The fix was obvious once I named the problem.
-              </p>
-            </div>
-
-            {/* Small card - Local first */}
-            <div className="col-span-12 sm:col-span-6 lg:col-span-4 bg-gradient-to-br from-[#FF2D6B]/20 to-[#FF2D6B]/5 border border-white/10 rounded-2xl p-8 hover:border-[#FF2D6B]/50 transition-colors">
-              <div className="text-3xl mb-4">💾</div>
-              <h4 className="text-xl font-semibold mb-4">Local first</h4>
-              <p className="text-white/70 leading-relaxed">
-                SwiftData, nothing leaving the device. iCloud sync is on the
-                roadmap. But it's not what the first release needed to prove.
-              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Process Section */}
-      <section className="py-[120px] px-8">
-        <div className="max-w-[1200px] mx-auto">
-          <h3 className="text-6xl font-bold mb-10 fade-in">
+      <section className="py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h3 className="text-4xl font-bold text-left mb-12 fade-in">
             How It Came Together
           </h3>
 
-          <div className="space-y-16 fade-in">
-            {/* Stage 1 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-              <div>
-                <div className="inline-block px-4 py-2 bg-[#FF2D6B]/20 text-[#FF2D6B] rounded-full text-sm mb-6">
-                  Stage 1
-                </div>
-                <h4 className="text-3xl font-semibold mb-4">
-                  Managed in Kanban
-                </h4>
-                <p className="text-white/70 leading-relaxed text-lg max-w-2xl">
-                  Every feature, bug, and polish item tracked with clarity.
-                  Migrated to GitHub Issues and Projects for v2.0.
-                </p>
-              </div>
-              <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-4 space-y-4">
-                <img
-                  src={trelloBoard}
-                  alt="Trello Board"
-                  className="w-full rounded-lg"
-                  loading="lazy"
-                />
-                <img
-                  src={trelloDetails}
-                  alt="Trello Details"
-                  className="w-full rounded-lg"
-                  loading="lazy"
-                />
-              </div>
-            </div>
+          {/* Timeline */}
+          <div className="relative fade-in">
+            {/* Vertical line — hidden on mobile */}
+            <div className="hidden md:block absolute left-0 top-0 bottom-0 w-px bg-[#FF2D6B]/20"></div>
 
-            {/* Stage 2 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-              <div>
-                <div className="inline-block px-4 py-2 bg-[#FF2D6B]/20 text-[#FF2D6B] rounded-full text-sm mb-6">
-                  Stage 2
+            <div className="space-y-20 md:pl-12">
+              {/* Stage 1 */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                  <div className="inline-block px-4 py-1.5 bg-[#FF2D6B]/20 text-[#FF2D6B] rounded-full text-sm mb-4">
+                    Stage 1
+                  </div>
+                  <h4 className="text-2xl font-semibold mb-3">
+                    Managed in Kanban
+                  </h4>
+                  <p className="text-white/70 leading-relaxed text-base">
+                    Every feature, bug, and polish item tracked with clarity.
+                    Migrated to GitHub Issues and Projects for v2.0.
+                  </p>
                 </div>
-                <h4 className="text-3xl font-semibold mb-4">
-                  Feature prioritization
-                </h4>
-                <p className="text-white/70 leading-relaxed text-lg max-w-2xl">
-                  Used an Eisenhower Matrix to scope v1.0 and prevent
-                  overbuilding.
-                </p>
+                <div className="rounded-xl overflow-hidden border border-white/10">
+                  <img
+                    src={trelloBoard}
+                    alt="Trello Board"
+                    className="w-full"
+                    loading="lazy"
+                  />
+                </div>
               </div>
-              <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-4">
-                <img
-                  src={eisenhowerMatrix}
-                  alt="Eisenhower Matrix"
-                  className="w-full rounded-lg"
-                  loading="lazy"
-                />
+
+              {/* Stage 2 — image left, text right */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div className="order-2 md:order-1 rounded-xl overflow-hidden border border-white/10">
+                  <img
+                    src={eisenhowerMatrix}
+                    alt="Eisenhower Matrix"
+                    className="w-full"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="order-1 md:order-2">
+                  <div className="inline-block px-4 py-1.5 bg-[#FF2D6B]/20 text-[#FF2D6B] rounded-full text-sm mb-4">
+                    Stage 2
+                  </div>
+                  <h4 className="text-2xl font-semibold mb-3">
+                    Feature prioritization
+                  </h4>
+                  <p className="text-white/70 leading-relaxed text-base">
+                    Used an Eisenhower Matrix to scope v1.0 and prevent
+                    overbuilding.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -469,109 +468,73 @@ export default function App() {
       {/* What Shipped Section */}
       <section
         id="shipped"
-        className="py-[120px] px-8 bg-gradient-to-b from-transparent via-[#1A0050]/10 to-transparent"
+        className="py-24 px-6 bg-gradient-to-b from-transparent via-[#1A0050]/10 to-transparent"
       >
-        <div className="max-w-[1400px] mx-auto">
-          <h3 className="text-6xl font-bold mb-10 fade-in">What Shipped</h3>
+        <div className="max-w-6xl mx-auto">
+          <h3 className="text-4xl font-bold text-left mb-4 fade-in">
+            What Shipped
+          </h3>
 
-          <div className="mb-10 fade-in">
+          {/* Full-width screenshot */}
+          <div className="rounded-xl overflow-hidden mb-12 fade-in">
             <img
               src={dashboardLight}
               alt="Main View"
-              className="screenshot-frame w-full mb-6"
+              className="screenshot-frame w-full"
               loading="lazy"
             />
-            {/* Staggered thumbnail row — flattens on mobile */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
-              <div className="md:-translate-y-4">
-                <img
-                  src={mainDark}
-                  alt="Dashboard Dark"
-                  className="screenshot-frame w-full"
-                  loading="lazy"
-                />
-              </div>
-              <div>
-                <img
-                  src={cancelLight}
-                  alt="To Cancel"
-                  className="screenshot-frame w-full"
-                  loading="lazy"
-                />
-              </div>
-              <div className="md:translate-y-4">
-                <img
-                  src={addNewLight}
-                  alt="Add New"
-                  className="screenshot-frame w-full"
-                  loading="lazy"
-                />
-              </div>
-            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 fade-in">
-            <div className="bg-white/5 border border-white/10 rounded-lg px-6 py-4">
-              <span className="text-white/90">
-                Three-panel NavigationSplitView
-              </span>
-            </div>
-            <div className="bg-white/5 border border-white/10 rounded-lg px-6 py-4">
-              <span className="text-white/90">
-                Full-width Dashboard with Swift Charts
-              </span>
-            </div>
-            <div className="bg-white/5 border border-white/10 rounded-lg px-6 py-4">
-              <span className="text-white/90">
-                To Cancel watchlist with urgency badges
-              </span>
-            </div>
-            <div className="bg-white/5 border border-white/10 rounded-lg px-6 py-4">
-              <span className="text-white/90">
-                Inline editing in the detail view
-              </span>
-            </div>
-            <div className="bg-white/5 border border-white/10 rounded-lg px-6 py-4">
-              <span className="text-white/90">
-                Drag and drop category reassignment
-              </span>
-            </div>
-            <div className="bg-white/5 border border-white/10 rounded-lg px-6 py-4">
-              <span className="text-white/90">
-                Right-click context menus on categories
-              </span>
-            </div>
-            <div className="bg-white/5 border border-white/10 rounded-lg px-6 py-4">
-              <span className="text-white/90">
-                Smart reminder date defaults
-              </span>
-            </div>
-            <div className="bg-white/5 border border-white/10 rounded-lg px-6 py-4">
-              <span className="text-white/90">
-                Blurred logo atmosphere headers
-              </span>
-            </div>
-            <div className="bg-white/5 border border-white/10 rounded-lg px-6 py-4">
-              <span className="text-white/90">
-                Brand colors from the app icon
-              </span>
-            </div>
-            <div className="bg-white/5 border border-white/10 rounded-lg px-6 py-4">
-              <span className="text-white/90">Full light and dark mode</span>
-            </div>
-            <div className="bg-white/5 border border-white/10 rounded-lg px-6 py-4">
-              <span className="text-white/90">31 unit tests</span>
-            </div>
-            <div className="bg-white/5 border border-white/10 rounded-lg px-6 py-4">
-              <span className="text-white/90">Submitted to Mac App Store</span>
-            </div>
+          {/* Clean feature list — no boxes */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-12 fade-in">
+            {[
+              "Three-panel NavigationSplitView",
+              "Full-width Dashboard with Swift Charts",
+              "To Cancel watchlist with urgency badges",
+              "Inline editing in the detail view",
+              "Drag and drop category reassignment",
+              "Right-click context menus on categories",
+              "Smart reminder date defaults",
+              "Blurred logo atmosphere headers",
+              "Brand colors from the app icon",
+              "Full light and dark mode",
+              "31 unit tests",
+              "Submitted to Mac App Store",
+            ].map((feature) => (
+              <div key={feature} className="flex items-center gap-3 py-2 border-b border-white/5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FF2D6B] flex-shrink-0"></span>
+                <span className="text-white/80 text-sm">{feature}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Screenshot trio — equal sizing, no stagger */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 fade-in">
+            <img
+              src={mainDark}
+              alt="Dashboard Dark"
+              className="screenshot-frame w-full"
+              loading="lazy"
+            />
+            <img
+              src={cancelLight}
+              alt="To Cancel"
+              className="screenshot-frame w-full"
+              loading="lazy"
+            />
+            <img
+              src={addNewLight}
+              alt="Add New"
+              className="screenshot-frame w-full"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
 
       {/* Dark Mode Section */}
-      <section className="py-[120px] px-8">
-        <div className="max-w-[1400px] mx-auto fade-in">
+      <section className="py-24 px-6">
+        <div className="max-w-6xl mx-auto fade-in">
           <div className="relative overflow-hidden rounded-2xl">
             <img
               src={mainDark}
@@ -591,13 +554,13 @@ export default function App() {
       {/* What's Next Section */}
       <section
         id="next"
-        className="py-[120px] px-8"
+        className="py-24 px-6"
         style={{
           background:
             "radial-gradient(ellipse at center top, rgba(26,0,80,0.6) 0%, rgba(13,17,23,0.95) 70%)",
         }}
       >
-        <div className="max-w-[1200px] mx-auto fade-in">
+        <div className="max-w-6xl mx-auto fade-in">
           <h3 className="text-6xl font-bold mb-12 text-center">
             v2.0 — The Intelligence Layer
           </h3>
@@ -614,54 +577,60 @@ export default function App() {
             differently.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-[#1A0050]/30 to-[#1A0050]/10 border border-[#1A0050]/50 rounded-2xl p-8 flex flex-col gap-4">
-              <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl"
-                style={{ background: "linear-gradient(135deg, #FF2D6B, #1A0050)" }}
-              >
-                🧠
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-gradient-to-br from-[#1A0050]/30 to-[#1A0050]/10 border border-[#1A0050]/50 rounded-2xl p-6 flex flex-col justify-between">
+              <div>
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4"
+                  style={{ background: "linear-gradient(135deg, #FF2D6B, #1A0050)" }}
+                >
+                  🧠
+                </div>
+                <h4 className="text-xl font-semibold mb-2">Foundation Models</h4>
+                <p className="text-white/70">
+                  On-device category suggestions and spending summaries
+                </p>
               </div>
-              <h4 className="text-xl font-semibold">Foundation Models</h4>
-              <p className="text-white/70 flex-1">
-                On-device category suggestions and spending summaries
-              </p>
-              <span className="self-start text-xs text-white/30 border border-white/10 rounded-full px-2 py-0.5">
+              <span className="self-start mt-4 text-xs text-white/30 border border-white/10 rounded-full px-2 py-0.5">
                 Planned
               </span>
             </div>
 
-            <div className="bg-gradient-to-br from-[#FF2D6B]/30 to-[#FF2D6B]/10 border border-[#FF2D6B]/50 rounded-2xl p-8 flex flex-col gap-4">
-              <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl"
-                style={{ background: "linear-gradient(135deg, #1A0050, #FF2D6B)" }}
-              >
-                📊
+            <div className="bg-gradient-to-br from-[#FF2D6B]/30 to-[#FF2D6B]/10 border border-[#FF2D6B]/50 rounded-2xl p-6 flex flex-col justify-between">
+              <div>
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4"
+                  style={{ background: "linear-gradient(135deg, #1A0050, #FF2D6B)" }}
+                >
+                  📊
+                </div>
+                <h4 className="text-xl font-semibold mb-2">Core ML</h4>
+                <p className="text-white/70">
+                  Anomaly detection and spending forecasts
+                </p>
               </div>
-              <h4 className="text-xl font-semibold">Core ML</h4>
-              <p className="text-white/70 flex-1">
-                Anomaly detection and spending forecasts
-              </p>
-              <span className="self-start text-xs text-white/30 border border-white/10 rounded-full px-2 py-0.5">
+              <span className="self-start mt-4 text-xs text-white/30 border border-white/10 rounded-full px-2 py-0.5">
                 Roadmap
               </span>
             </div>
 
-            <div className="bg-gradient-to-br from-[#1A0050]/30 to-[#1A0050]/10 border border-[#1A0050]/50 rounded-2xl p-8 flex flex-col gap-4">
-              <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(255,45,107,0.7), rgba(26,0,80,0.7))",
-                }}
-              >
-                ✨
+            <div className="bg-gradient-to-br from-[#1A0050]/30 to-[#1A0050]/10 border border-[#1A0050]/50 rounded-2xl p-6 flex flex-col justify-between">
+              <div>
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, rgba(255,45,107,0.7), rgba(26,0,80,0.7))",
+                  }}
+                >
+                  ✨
+                </div>
+                <h4 className="text-xl font-semibold mb-2">Apple Intelligence</h4>
+                <p className="text-white/70">
+                  As those APIs mature and become available
+                </p>
               </div>
-              <h4 className="text-xl font-semibold">Apple Intelligence</h4>
-              <p className="text-white/70 flex-1">
-                As those APIs mature and become available
-              </p>
-              <span className="self-start text-xs text-white/30 border border-white/10 rounded-full px-2 py-0.5">
+              <span className="self-start mt-4 text-xs text-white/30 border border-white/10 rounded-full px-2 py-0.5">
                 Roadmap
               </span>
             </div>
@@ -670,8 +639,8 @@ export default function App() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-8 border-t border-white/10">
-        <div className="max-w-[1440px] mx-auto flex items-center justify-between">
+      <footer className="py-12 px-6 border-t border-white/10">
+        <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div>
             <div className="font-semibold mb-1">Supscription</div>
             <div className="text-sm text-white/50">Built by Richie Flores</div>
