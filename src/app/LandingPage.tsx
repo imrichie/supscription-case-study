@@ -315,12 +315,12 @@ export default function LandingPage() {
             </div>
           </div>
           <div className="flex items-center gap-6">
-            <Link
+            {/* <Link
               to="/case-study"
               className="text-sm text-white/70 hover:text-white transition-colors"
             >
               Case Study
-            </Link>
+            </Link> */}
             <a
               href="https://github.com/imrichie/supscription"
               target="_blank"
