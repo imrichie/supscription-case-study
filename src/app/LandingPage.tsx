@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { Download, Github, CheckCircle2 } from "lucide-react";
+import { Github, CheckCircle2 } from "lucide-react";
 import appLogo from "../../images/app-logo.png";
 import mainLight from "../../images/main_light.png";
 import dashboardLight from "../../images/dashboard_light.png";
@@ -24,21 +24,18 @@ export default function LandingPage() {
           </div>
           <nav className="flex items-center gap-6">
             <a
-              href="https://github.com/imrichie/supscription"
+              href={APP_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-white/70 hover:text-white transition-colors flex items-center gap-2"
+              className="text-sm text-white/70 hover:text-white transition-colors px-3 py-1.5 rounded-lg"
+              style={{
+                border: "1px solid transparent",
+                background:
+                  "linear-gradient(#0d1117, #0d1117) padding-box, linear-gradient(to right, rgba(255,45,107,0.5), rgba(26,0,80,0.5)) border-box",
+              }}
             >
-              <Github size={16} />
-              GitHub
+              Download — $4.99
             </a>
-            {/* <a
-              href="#download"
-              className="px-4 py-2 bg-gradient-to-r from-[#1A0050] to-[#FF2D6B] rounded-lg text-sm font-medium hover:opacity-90 transition-opacity flex items-center gap-2"
-            >
-              <Download size={16} />
-              Download
-            </a> */}
           </nav>
         </div>
       </header>
@@ -54,8 +51,8 @@ export default function LandingPage() {
             </span>
           </h1>
           <p className="text-xl text-white/60 max-w-2xl mx-auto mb-12">
-            Native macOS app built with Swift and SwiftUI. No bank linking, no
-            accounts, no cloud sync. Just your subscriptions, locally tracked.
+            All your subscriptions, in one place. Know what you're paying, when
+            you're billed, and what to cancel. Yours forever.
           </p>
           <div className="flex justify-center">
             <a
@@ -94,10 +91,12 @@ export default function LandingPage() {
           {/* Feature 1 — Built the Apple way */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start mb-20">
             <div>
-              <h2 className="text-4xl font-bold mb-6">Built the Apple way</h2>
+              <h2 className="text-4xl font-bold mb-6">
+                Feels like it belongs on your Mac
+              </h2>
               <p className="text-lg text-white/60 leading-relaxed mb-8">
-                SwiftUI. SwiftData. Swift Charts. Zero third-party dependencies.
-                Just Apple's frameworks doing what they do best.
+                Fast, focused, and native. Built for macOS from the ground up —
+                no web wrappers, no bloat.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
@@ -106,23 +105,9 @@ export default function LandingPage() {
                     className="text-[#FF2D6B] mt-1 flex-shrink-0"
                   />
                   <div>
-                    <div className="font-medium mb-1">
-                      Local-first architecture
-                    </div>
+                    <div className="font-medium mb-1">Opens instantly</div>
                     <div className="text-sm text-white/60">
-                      Your data stays on your Mac. Period.
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2
-                    size={20}
-                    className="text-[#FF2D6B] mt-1 flex-shrink-0"
-                  />
-                  <div>
-                    <div className="font-medium mb-1">Native performance</div>
-                    <div className="text-sm text-white/60">
-                      Instant launch. No loading screens.
+                      No loading screens. It's just there.
                     </div>
                   </div>
                 </div>
@@ -134,7 +119,21 @@ export default function LandingPage() {
                   <div>
                     <div className="font-medium mb-1">Light and dark mode</div>
                     <div className="text-sm text-white/60">
-                      Every screen. No exceptions.
+                      Every screen, automatically.
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2
+                    size={20}
+                    className="text-[#FF2D6B] mt-1 flex-shrink-0"
+                  />
+                  <div>
+                    <div className="font-medium mb-1">
+                      Your data stays yours
+                    </div>
+                    <div className="text-sm text-white/60">
+                      Nothing leaves your Mac. No accounts, no syncing.
                     </div>
                   </div>
                 </div>
@@ -190,11 +189,9 @@ export default function LandingPage() {
                     className="text-[#FF2D6B] mt-1 flex-shrink-0"
                   />
                   <div>
-                    <div className="font-medium mb-1">
-                      Category organization
-                    </div>
+                    <div className="font-medium mb-1">Organized your way</div>
                     <div className="text-sm text-white/60">
-                      Drag and drop to organize your way.
+                      Group by category, sorted by what's due soonest.
                     </div>
                   </div>
                 </div>
@@ -213,11 +210,12 @@ export default function LandingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
             <div>
               <h2 className="text-4xl font-bold mb-6">
-                Add anything in seconds
+                Log it in seconds, forget about it
               </h2>
               <p className="text-lg text-white/60 leading-relaxed mb-8">
-                Clean, focused forms. Smart date defaults. Automatic logo
-                fetching. Just the information you actually need.
+                Name it, set the price and billing date, and you're done.
+                Company logos pull in automatically. No manual entry, no hunting
+                around.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
@@ -228,7 +226,7 @@ export default function LandingPage() {
                   <div>
                     <div className="font-medium mb-1">Logo detection</div>
                     <div className="text-sm text-white/60">
-                      Pulls company logos automatically.
+                      Pulls company logos.
                     </div>
                   </div>
                 </div>
@@ -252,7 +250,7 @@ export default function LandingPage() {
                   <div>
                     <div className="font-medium mb-1">Custom frequencies</div>
                     <div className="text-sm text-white/60">
-                      Monthly, yearly, or your own schedule.
+                      Monthly, yearly, or whatever schedule you need.
                     </div>
                   </div>
                 </div>
@@ -269,172 +267,15 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Tech Stack */}
-      <section className="px-6 py-16 bg-gradient-to-b from-transparent via-[#1A0050]/5 to-transparent">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">
-            Built with Apple's frameworks
-          </h2>
-          <p className="text-lg text-white/60 mb-12 max-w-2xl mx-auto">
-            SwiftUI for interface. SwiftData for persistence. Swift Charts for
-            analytics. UserNotifications for reminders. Zero dependencies.
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {/* Swift */}
-            <div className="bg-white/5 border border-white/10 rounded-xl p-6 flex flex-col items-center">
-              <img
-                src="https://cdn.simpleicons.org/swift"
-                alt="Swift"
-                className="w-10 h-10 mb-3"
-              />
-              <div className="font-medium">Swift</div>
-            </div>
-            {/* SwiftUI — Apple's blue diamond-grid icon */}
-            <div className="bg-white/5 border border-white/10 rounded-xl p-6 flex flex-col items-center">
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 40 40"
-                fill="none"
-                className="mb-3"
-              >
-                <rect width="40" height="40" rx="9" fill="url(#swiftui-grad)" />
-                <path
-                  d="M20 8C13.373 8 8 13.373 8 20s5.373 12 12 12 12-5.373 12-12S26.627 8 20 8zm0 2.4c5.301 0 9.6 4.299 9.6 9.6s-4.299 9.6-9.6 9.6S10.4 25.301 10.4 20s4.299-9.6 9.6-9.6z"
-                  fill="white"
-                  fillOpacity="0.9"
-                />
-                <path
-                  d="M20 13.6a6.4 6.4 0 100 12.8 6.4 6.4 0 000-12.8zm0 2.4a4 4 0 110 8 4 4 0 010-8z"
-                  fill="white"
-                  fillOpacity="0.7"
-                />
-                <circle cx="20" cy="20" r="2" fill="white" />
-                <defs>
-                  <linearGradient
-                    id="swiftui-grad"
-                    x1="0"
-                    y1="0"
-                    x2="40"
-                    y2="40"
-                  >
-                    <stop stopColor="#1A8FE3" />
-                    <stop offset="1" stopColor="#0F62CB" />
-                  </linearGradient>
-                </defs>
-              </svg>
-              <div className="font-medium">SwiftUI</div>
-            </div>
-            {/* SwiftData — teal database icon */}
-            <div className="bg-white/5 border border-white/10 rounded-xl p-6 flex flex-col items-center">
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 40 40"
-                fill="none"
-                className="mb-3"
-              >
-                <rect
-                  width="40"
-                  height="40"
-                  rx="9"
-                  fill="url(#swiftdata-grad)"
-                />
-                <ellipse
-                  cx="20"
-                  cy="14"
-                  rx="9"
-                  ry="4"
-                  fill="white"
-                  fillOpacity="0.9"
-                />
-                <path
-                  d="M11 14v6c0 2.209 4.03 4 9 4s9-1.791 9-4v-6c0 2.209-4.03 4-9 4s-9-1.791-9-4z"
-                  fill="white"
-                  fillOpacity="0.7"
-                />
-                <path
-                  d="M11 20v6c0 2.209 4.03 4 9 4s9-1.791 9-4v-6c0 2.209-4.03 4-9 4s-9-1.791-9-4z"
-                  fill="white"
-                  fillOpacity="0.5"
-                />
-                <defs>
-                  <linearGradient
-                    id="swiftdata-grad"
-                    x1="0"
-                    y1="0"
-                    x2="40"
-                    y2="40"
-                  >
-                    <stop stopColor="#00B9A8" />
-                    <stop offset="1" stopColor="#00897B" />
-                  </linearGradient>
-                </defs>
-              </svg>
-              <div className="font-medium">SwiftData</div>
-            </div>
-            {/* Swift Charts — blue bar chart icon */}
-            <div className="bg-white/5 border border-white/10 rounded-xl p-6 flex flex-col items-center">
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 40 40"
-                fill="none"
-                className="mb-3"
-              >
-                <rect width="40" height="40" rx="9" fill="url(#charts-grad)" />
-                <rect
-                  x="9"
-                  y="22"
-                  width="5"
-                  height="10"
-                  rx="1.5"
-                  fill="white"
-                  fillOpacity="0.5"
-                />
-                <rect
-                  x="17.5"
-                  y="15"
-                  width="5"
-                  height="17"
-                  rx="1.5"
-                  fill="white"
-                  fillOpacity="0.75"
-                />
-                <rect
-                  x="26"
-                  y="9"
-                  width="5"
-                  height="23"
-                  rx="1.5"
-                  fill="white"
-                  fillOpacity="0.95"
-                />
-                <defs>
-                  <linearGradient
-                    id="charts-grad"
-                    x1="0"
-                    y1="0"
-                    x2="40"
-                    y2="40"
-                  >
-                    <stop stopColor="#3B9EFF" />
-                    <stop offset="1" stopColor="#0A6EDC" />
-                  </linearGradient>
-                </defs>
-              </svg>
-              <div className="font-medium">Swift Charts</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Download */}
       <section id="download" className="px-6 py-12">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-5xl font-bold mb-6">
             One-time purchase. Yours forever.
           </h2>
+          <div className="text-7xl font-bold mb-6 bg-gradient-to-r from-[#FF2D6B] to-[#1A0050] bg-clip-text text-transparent">
+            $4.99
+          </div>
           <p className="text-xl text-white/60 mb-12">
             No subscription to track your subscriptions. Download from the Mac
             App Store.
@@ -443,10 +284,13 @@ export default function LandingPage() {
             href={APP_STORE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[#0d1117] rounded-xl font-semibold text-lg hover:bg-white/90 transition-colors"
+            className="inline-block hover:opacity-80 transition-opacity"
           >
-            <Download size={24} />
-            Download for macOS
+            <img
+              src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us"
+              alt="Download on the App Store"
+              className="h-14 w-auto"
+            />
           </a>
           <div className="mt-8 text-sm text-white/50">
             Requires macOS 15.1 or later
@@ -481,8 +325,9 @@ export default function LandingPage() {
               href="https://github.com/imrichie/supscription"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-white/70 hover:text-white transition-colors"
+              className="text-sm text-white/70 hover:text-white transition-colors flex items-center gap-2"
             >
+              <Github size={16} />
               GitHub
             </a>
           </div>
