@@ -328,6 +328,12 @@ export default function LandingPage() {
             >
               Case Study
             </Link>
+            <Link
+              to="/privacy"
+              className="text-sm text-white/70 hover:text-white transition-colors"
+            >
+              Privacy
+            </Link>
             <a
               href="https://github.com/imrichie/supscription"
               target="_blank"

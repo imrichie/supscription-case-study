@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router";
 import { Github, Menu, X } from "lucide-react";
 
 // Import images
@@ -640,7 +641,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className="py-12 px-6 border-t border-white/10">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
+        <div className="max-w-6xl mx-auto flex items-center justify-between gap-6">
           <div>
             <div className="font-semibold mb-1">Supscription</div>
             <div className="text-sm text-white/50">Built by Richie Flores</div>
@@ -650,7 +651,13 @@ export default function App() {
               A one-time purchase. No subscription to track your subscriptions.
             </div>
           </div>
-          <div>
+          <div className="flex items-center gap-6">
+            <Link
+              to="/privacy"
+              className="text-sm text-white/70 hover:text-white transition-colors"
+            >
+              Privacy
+            </Link>
             <a
               href="https://github.com/imrichie/supscription"
               target="_blank"
