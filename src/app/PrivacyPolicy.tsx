@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { Shield, Lock, Cloud, Server, Trash2, Mail } from "lucide-react";
 import appLogo from "../../images/app-logo.png";
+import SiteFooter from "./components/SiteFooter.tsx";
 
 export default function PrivacyPolicy() {
   return (
@@ -11,7 +12,11 @@ export default function PrivacyPolicy() {
             to="/"
             className="flex items-center gap-3 hover:opacity-80 transition-opacity"
           >
-            <img src={appLogo} alt="Supscription" className="w-8 h-8 rounded-lg" />
+            <img
+              src={appLogo}
+              alt="Supscription"
+              className="w-8 h-8 rounded-lg"
+            />
             <span className="text-xl font-semibold">Supscription</span>
           </Link>
           <Link
@@ -83,7 +88,9 @@ export default function PrivacyPolicy() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="bg-[#0d1117] border border-white/10 rounded-xl p-6">
-                <h3 className="font-semibold text-white mb-2 text-lg">What syncs</h3>
+                <h3 className="font-semibold text-white mb-2 text-lg">
+                  What syncs
+                </h3>
                 <p className="text-white/70 leading-relaxed">
                   Subscription names, prices, billing dates, billing frequency,
                   categories, and any other subscription details you enter into
@@ -181,45 +188,9 @@ export default function PrivacyPolicy() {
             </p>
           </div>
         </div>
-
-        <div className="mt-16 text-center">
-          <p className="text-white/50">Supscription is built by Ricardo Flores</p>
-        </div>
       </div>
 
-      <footer className="px-6 py-12 border-t border-white/10">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-6 flex-col md:flex-row">
-          <div className="flex items-center gap-3">
-            <img src={appLogo} alt="Supscription" className="w-6 h-6 rounded-lg" />
-            <div>
-              <div className="text-sm font-medium">Supscription</div>
-              <div className="text-xs text-white/50">Built by Richie Flores</div>
-            </div>
-          </div>
-          <div className="flex items-center gap-6">
-            <Link
-              to="/case-study"
-              className="text-sm text-white/70 hover:text-white transition-colors"
-            >
-              Case Study
-            </Link>
-            <Link
-              to="/privacy"
-              className="text-sm text-white/70 hover:text-white transition-colors"
-            >
-              Privacy
-            </Link>
-            <a
-              href="https://github.com/imrichie/supscription"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-white/70 hover:text-white transition-colors"
-            >
-              GitHub
-            </a>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

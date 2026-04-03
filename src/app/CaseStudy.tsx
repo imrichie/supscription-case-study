@@ -8,6 +8,7 @@ import dashboardLight from "../../images/dashboard_light.png";
 import cancelLight from "../../images/cancel_light.png";
 import addNewLight from "../../images/addNew_light.png";
 import eisenhowerMatrix from "../../images/Eisenhower-Matrix.png";
+import SiteFooter from "./components/SiteFooter.tsx";
 
 export default function CaseStudy() {
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -54,6 +55,12 @@ export default function CaseStudy() {
             >
               <ArrowLeft size={16} />
               Back to site
+            </Link>
+            <Link
+              to="/privacy"
+              className="text-sm text-white/70 hover:text-white transition-colors"
+            >
+              Privacy
             </Link>
             <a
               href="https://github.com/imrichie/supscription"
@@ -649,33 +656,7 @@ export default function CaseStudy() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 px-6 border-t border-white/10">
-        <div className="max-w-[1440px] mx-auto flex items-center justify-between">
-          <div>
-            <div className="font-semibold mb-1">Richie Flores</div>
-            <div className="text-sm text-white/50">
-              Product · Design · Engineering
-            </div>
-          </div>
-          <div className="flex items-center gap-6">
-            <Link
-              to="/"
-              className="text-sm text-white/70 hover:text-white transition-colors"
-            >
-              Back to site
-            </Link>
-            <a
-              href="https://github.com/imrichie/supscription"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-white/70 hover:text-white transition-colors"
-            >
-              View code
-            </a>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
 
       <style>{`
         .fade-in {
