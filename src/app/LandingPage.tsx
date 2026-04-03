@@ -23,6 +23,13 @@ export default function LandingPage() {
             <span className="text-xl font-semibold">Supscription</span>
           </div>
           <nav className="flex items-center gap-6">
+            <Link
+              to="/case-study"
+              className="text-sm text-white/70 hover:text-white transition-colors"
+            >
+              Case Study
+            </Link>
+
             <a
               href={APP_STORE_URL}
               target="_blank"
@@ -315,20 +322,20 @@ export default function LandingPage() {
             </div>
           </div>
           <div className="flex items-center gap-6">
-            {/* <Link
+            <Link
               to="/case-study"
               className="text-sm text-white/70 hover:text-white transition-colors"
             >
               Case Study
-            </Link> */}
+            </Link>
             <a
               href="https://github.com/imrichie/supscription"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-white/70 hover:text-white transition-colors flex items-center gap-2"
+              className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
             >
               <Github size={16} />
-              GitHub
+              <span className="text-sm">View code</span>
             </a>
           </div>
         </div>
