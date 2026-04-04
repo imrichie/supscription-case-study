@@ -57,8 +57,8 @@ export default function PrivacyPolicy() {
               The Short Version
             </h2>
             <p className="text-lg text-white/90 leading-relaxed">
-              Supscription does not collect, store, or share any personal data.
-              Everything you enter into the app stays on your device.
+              Supscription does not collect or share your personal data. Your
+              data stays on your device unless you enable optional iCloud sync.
             </p>
           </section>
 
@@ -71,9 +71,9 @@ export default function PrivacyPolicy() {
                 What We Don&apos;t Collect
               </h2>
               <p className="text-lg text-white/78 leading-relaxed">
-                Supscription does not collect any personal information. There
-                are no accounts, no sign-ins, no analytics, and no data sent to
-                any server. Your subscription data never leaves your Mac.
+                Supscription does not collect personal information. There are
+                no accounts, no sign-ins, no analytics, and no data stored on
+                our servers.
               </p>
             </section>
 
@@ -86,10 +86,11 @@ export default function PrivacyPolicy() {
               </h2>
               <p className="text-lg text-white/78 leading-relaxed">
                 Supscription stores your subscription data locally on your
-                device using Apple&apos;s SwiftData framework. The only network
-                request the app makes is fetching company logos by domain name
-                from a third-party logo service. No personal information is
-                included in these requests.
+                device using Apple&apos;s SwiftData framework. If you enable
+                iCloud sync, your data is also stored in your personal iCloud
+                account. The app also fetches company logos by domain name from
+                a third-party logo service. No personal information is included
+                in those requests.
               </p>
             </section>
 
@@ -102,8 +103,8 @@ export default function PrivacyPolicy() {
               </h2>
               <p className="text-lg text-white/78 leading-relaxed mb-6">
                 Supscription offers optional iCloud sync to keep your
-                subscriptions up to date across all your Apple devices signed
-                into the same iCloud account.
+                subscriptions up to date across your Apple devices signed into
+                the same iCloud account.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -123,9 +124,9 @@ export default function PrivacyPolicy() {
                     Where your data lives
                   </h3>
                   <p className="text-white/68 leading-relaxed">
-                    All synced data is stored in your personal iCloud account
-                    using Apple&apos;s CloudKit service. Your data is never
-                    stored on our servers.
+                    Synced data is stored in your personal iCloud account using
+                    Apple&apos;s CloudKit service. Your data is not stored on
+                    our servers.
                   </p>
                 </div>
 
@@ -134,9 +135,9 @@ export default function PrivacyPolicy() {
                     iCloud is optional
                   </h3>
                   <p className="text-white/68 leading-relaxed">
-                    You can disable iCloud sync at any time in the app&apos;s
-                    Settings. When disabled, your subscriptions are stored
-                    locally on your device only.
+                    You can turn off iCloud sync at any time in the app&apos;s
+                    Settings. When it&apos;s off, your subscriptions stay on
+                    your device only.
                   </p>
                 </div>
 
@@ -178,8 +179,8 @@ export default function PrivacyPolicy() {
                   img.logo.dev
                 </a>{" "}
                 to fetch company logos based on domain names you enter. Only
-                the domain name is sent, not personal information, subscription
-                data, or device identifiers.
+                the domain name is sent. No personal information, subscription
+                data, or device identifiers are included.
               </p>
             </section>
 
@@ -191,8 +192,9 @@ export default function PrivacyPolicy() {
                 Data Retention
               </h2>
               <p className="text-lg text-white/78 leading-relaxed">
-                All data is stored locally on your Mac. Deleting the app
-                removes all associated data.
+                Data stored on your device is removed when you delete the app.
+                If iCloud sync is enabled, synced data remains in your iCloud
+                account until it is removed there.
               </p>
             </section>
 
