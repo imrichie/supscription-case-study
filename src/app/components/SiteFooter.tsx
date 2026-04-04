@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { Github } from "lucide-react";
+import { Code2 } from "lucide-react";
 import appLogo from "../../../images/app-logo.png";
 
 type SiteFooterProps = {
@@ -41,7 +41,7 @@ export default function SiteFooter({ showGithub = false }: SiteFooterProps) {
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
             >
-              <Github size={16} />
+              <Code2 size={16} />
               <span className="text-sm">View code</span>
             </a>
           )}
