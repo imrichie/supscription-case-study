@@ -1,4 +1,3 @@
-import { Link } from "react-router";
 import { CheckCircle2 } from "lucide-react";
 import appLogo from "../../images/app-logo.png";
 import mainLight from "../../images/main_light.png";
@@ -23,14 +22,7 @@ export default function LandingPage() {
             />
             <span className="text-xl font-semibold">Supscription</span>
           </div>
-          <nav className="flex items-center gap-6">
-            <Link
-              to="/case-study"
-              className="text-sm text-white/70 hover:text-white transition-colors"
-            >
-              Case Study
-            </Link>
-
+          <nav className="flex items-center">
             <a
               href={APP_STORE_URL}
               target="_blank"
