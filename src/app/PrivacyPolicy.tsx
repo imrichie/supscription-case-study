@@ -7,7 +7,7 @@ export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-[#0d1117] text-white">
       <header className="sticky top-0 z-50 backdrop-blur-md bg-[#0d1117]/80 border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center">
           <Link
             to="/"
             className="flex items-center gap-3 hover:opacity-80 transition-opacity"
@@ -18,12 +18,6 @@ export default function PrivacyPolicy() {
               className="w-8 h-8 rounded-lg"
             />
             <span className="text-xl font-semibold">Supscription</span>
-          </Link>
-          <Link
-            to="/"
-            className="text-sm text-white/70 hover:text-white transition-colors"
-          >
-            Back to site
           </Link>
         </div>
       </header>
