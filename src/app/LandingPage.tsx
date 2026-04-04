@@ -1,10 +1,10 @@
-import { Link } from "react-router";
-import { Github, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import appLogo from "../../images/app-logo.png";
 import mainLight from "../../images/main_light.png";
 import dashboardLight from "../../images/dashboard_light.png";
 import cancelLight from "../../images/cancel_light.png";
 import addNewLight from "../../images/addNew_light.png";
+import SiteFooter from "./components/SiteFooter.tsx";
 
 const APP_STORE_URL = "https://apps.apple.com/us/app/supscription/id6760910809";
 
@@ -22,14 +22,7 @@ export default function LandingPage() {
             />
             <span className="text-xl font-semibold">Supscription</span>
           </div>
-          <nav className="flex items-center gap-6">
-            <Link
-              to="/case-study"
-              className="text-sm text-white/70 hover:text-white transition-colors"
-            >
-              Case Study
-            </Link>
-
+          <nav className="flex items-center">
             <a
               href={APP_STORE_URL}
               target="_blank"
@@ -58,8 +51,8 @@ export default function LandingPage() {
             </span>
           </h1>
           <p className="text-xl text-white/60 max-w-2xl mx-auto mb-12">
-            All your subscriptions, in one place. Know what you're paying, when
-            you're billed, and what to cancel. Yours forever.
+            All your subscriptions, in one place. Know what you&apos;re paying,
+            when it renews, and what to cancel.
           </p>
           <div className="flex justify-center">
             <a
@@ -102,22 +95,10 @@ export default function LandingPage() {
                 Feels like it belongs on your Mac
               </h2>
               <p className="text-lg text-white/60 leading-relaxed mb-8">
-                Fast, focused, and native. Built for macOS from the ground up —
-                no web wrappers, no bloat.
+                Fast, focused, and native. Built for the Mac from the ground up
+                — no web wrappers, no bloat.
               </p>
               <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2
-                    size={20}
-                    className="text-[#FF2D6B] mt-1 flex-shrink-0"
-                  />
-                  <div>
-                    <div className="font-medium mb-1">Opens instantly</div>
-                    <div className="text-sm text-white/60">
-                      No loading screens. It's just there.
-                    </div>
-                  </div>
-                </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2
                     size={20}
@@ -136,11 +117,21 @@ export default function LandingPage() {
                     className="text-[#FF2D6B] mt-1 flex-shrink-0"
                   />
                   <div>
-                    <div className="font-medium mb-1">
-                      Your data stays yours
-                    </div>
+                    <div className="font-medium mb-1">Native Mac interface</div>
                     <div className="text-sm text-white/60">
-                      Nothing leaves your Mac. No accounts, no syncing.
+                      Built to feel at home on macOS.
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2
+                    size={20}
+                    className="text-[#FF2D6B] mt-1 flex-shrink-0"
+                  />
+                  <div>
+                    <div className="font-medium mb-1">No web wrapper</div>
+                    <div className="text-sm text-white/60">
+                      Fast, direct, and made for the desktop.
                     </div>
                   </div>
                 </div>
@@ -160,8 +151,8 @@ export default function LandingPage() {
             <div className="md:order-2">
               <h2 className="text-4xl font-bold mb-6">Know what's coming</h2>
               <p className="text-lg text-white/60 leading-relaxed mb-8">
-                Smart reminders. Renewal tracking. A dedicated "To Cancel"
-                watchlist for subscriptions you're ready to drop.
+                Keep track of upcoming renewals, subscriptions to revisit, and
+                what&apos;s worth canceling.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
@@ -170,11 +161,9 @@ export default function LandingPage() {
                     className="text-[#FF2D6B] mt-1 flex-shrink-0"
                   />
                   <div>
-                    <div className="font-medium mb-1">
-                      Intelligent notifications
-                    </div>
+                    <div className="font-medium mb-1">Renewal reminders</div>
                     <div className="text-sm text-white/60">
-                      Get reminded before renewals hit.
+                      See upcoming charges before they hit.
                     </div>
                   </div>
                 </div>
@@ -184,9 +173,9 @@ export default function LandingPage() {
                     className="text-[#FF2D6B] mt-1 flex-shrink-0"
                   />
                   <div>
-                    <div className="font-medium mb-1">Urgency badges</div>
+                    <div className="font-medium mb-1">To Cancel list</div>
                     <div className="text-sm text-white/60">
-                      See what needs attention first.
+                      Keep track of subscriptions you may want to drop.
                     </div>
                   </div>
                 </div>
@@ -196,9 +185,9 @@ export default function LandingPage() {
                     className="text-[#FF2D6B] mt-1 flex-shrink-0"
                   />
                   <div>
-                    <div className="font-medium mb-1">Organized your way</div>
+                    <div className="font-medium mb-1">Due dates at a glance</div>
                     <div className="text-sm text-white/60">
-                      Group by category, sorted by what's due soonest.
+                      Know what needs attention next.
                     </div>
                   </div>
                 </div>
@@ -217,12 +206,11 @@ export default function LandingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
             <div>
               <h2 className="text-4xl font-bold mb-6">
-                Log it in seconds, forget about it
+                Easy to keep up to date
               </h2>
               <p className="text-lg text-white/60 leading-relaxed mb-8">
-                Name it, set the price and billing date, and you're done.
-                Company logos pull in automatically. No manual entry, no hunting
-                around.
+                Add subscriptions in a few seconds, keep them up to date, and
+                quickly see what&apos;s worth canceling.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
@@ -231,9 +219,9 @@ export default function LandingPage() {
                     className="text-[#FF2D6B] mt-1 flex-shrink-0"
                   />
                   <div>
-                    <div className="font-medium mb-1">Logo detection</div>
+                    <div className="font-medium mb-1">Quick to add</div>
                     <div className="text-sm text-white/60">
-                      Pulls company logos.
+                      Enter a subscription and move on.
                     </div>
                   </div>
                 </div>
@@ -243,9 +231,9 @@ export default function LandingPage() {
                     className="text-[#FF2D6B] mt-1 flex-shrink-0"
                   />
                   <div>
-                    <div className="font-medium mb-1">Inline editing</div>
+                    <div className="font-medium mb-1">Easy to use</div>
                     <div className="text-sm text-white/60">
-                      Update details without leaving the view.
+                      Simple enough to keep current.
                     </div>
                   </div>
                 </div>
@@ -255,9 +243,9 @@ export default function LandingPage() {
                     className="text-[#FF2D6B] mt-1 flex-shrink-0"
                   />
                   <div>
-                    <div className="font-medium mb-1">Custom frequencies</div>
+                    <div className="font-medium mb-1">Know what to cancel</div>
                     <div className="text-sm text-white/60">
-                      Monthly, yearly, or whatever schedule you need.
+                      See what&apos;s still worth paying for.
                     </div>
                   </div>
                 </div>
@@ -305,41 +293,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="px-6 py-12 border-t border-white/10">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <img
-              src={appLogo}
-              alt="Supscription"
-              className="w-6 h-6 rounded-lg"
-            />
-            <div>
-              <div className="text-sm font-medium">Supscription</div>
-              <div className="text-xs text-white/50">
-                Built by Ricardo Flores
-              </div>
-            </div>
-          </div>
-          <div className="flex items-center gap-6">
-            <Link
-              to="/case-study"
-              className="text-sm text-white/70 hover:text-white transition-colors"
-            >
-              Case Study
-            </Link>
-            <a
-              href="https://github.com/imrichie/supscription"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
-            >
-              <Github size={16} />
-              <span className="text-sm">View code</span>
-            </a>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
