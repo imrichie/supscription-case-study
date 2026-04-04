@@ -65,9 +65,9 @@ export default function PrivacyPolicy() {
                 What We Don&apos;t Collect
               </h2>
               <p className="text-lg text-white/78 leading-relaxed">
-                Supscription does not collect personal information. There are
-                no accounts, no sign-ins, no analytics, and no data stored on
-                our servers.
+                Supscription does not collect personal information. There are no
+                accounts, no sign-ins, no analytics, and no data stored on our
+                servers.
               </p>
             </section>
 
@@ -172,9 +172,9 @@ export default function PrivacyPolicy() {
                 >
                   img.logo.dev
                 </a>{" "}
-                to fetch company logos based on domain names you enter. Only
-                the domain name is sent. No personal information, subscription
-                data, or device identifiers are included.
+                to fetch company logos based on domain names you enter. Only the
+                domain name is sent. No personal information, subscription data,
+                or device identifiers are included.
               </p>
             </section>
 
@@ -210,10 +210,6 @@ export default function PrivacyPolicy() {
                 </a>
               </p>
             </section>
-          </div>
-
-          <div className="mt-10 text-center text-sm text-white/45">
-            Supscription is built by Ricardo Flores
           </div>
         </div>
       </main>
